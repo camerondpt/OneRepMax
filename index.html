@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--Style Sheet for the index.html page -->
+    <link href="stylesheet.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <title>One Rep Max Calculator</title>
+  </head>
+  <body>
+    <form method="post">
+      <input type="number" id="reps"> Reps Performed<br>
+      <input type="number" id="weight"> lbs<br>
+    </form>
+    <button id="calculate">Calculate</button>
+    <form>
+      1RM = <input type="text" id="oneRepMaxLa"> (Landers)<br>
+      1RM = <input type="text" id="oneRepMaxOc"> (O'Connor)<br>
+    </form>
+
+    <!-- jquery script -->
+  <script>
+    $("button#calculate").on("click", function () {
+	    var reps = $("input#reps").val();
+      var weight = $("input#weight").val();
+      $("input#oneRepMaxLa").val(Math.round(100 * weight / (101.3 - 2.67123 * reps)));
+      $("input#oneRepMaxOc").val(Math.round(weight * (1 + 0.025 * reps)));
+      }
+    );
+  </script>
+  </body>
+</html>
