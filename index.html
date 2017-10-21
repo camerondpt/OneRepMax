@@ -9,8 +9,8 @@
   </head>
   <body>
     <form method="post">
-      <input type="number" id="reps"> Reps Performed<br>
-      <input type="number" id="weight"> lbs<br>
+      <input type="number" id="reps" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number"> Reps Performed<br>
+      <input type="number min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number"" id="weight"> lbs<br>
     </form>
     <button id="calculate">Calculate</button>
     <form>
