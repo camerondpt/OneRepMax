@@ -5,6 +5,10 @@ html {
   line-height: 2em;
 }
 
+input {
+  text-align: center;
+}
+
 input[type="text"] {
   width: 75px;
   border: none;
