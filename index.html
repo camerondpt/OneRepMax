@@ -9,25 +9,40 @@
   </head>
   <body>
     <form method="post">
-      <input type="number" id="reps" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number"> Repititions<br>
-      <input type="number" id="weight" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number"> Pounds<br>
+      <input type="number" id="reps"> Repititions<br>
+      <input type="number" id="weight"> Pounds<br>
     </form>
     <button id="calculate">Calculate</button>
-    <br>
     <form>
       1RM = <input type="text" id="oneRepMaxLa"> (Landers)<br>
       1RM = <input type="text" id="oneRepMaxOc"> (O'Connor)<br>
+        <br>
+      <input type="range" min="0" max="100" value="70" step="5" onchange="rangevalue.value=value" id="percentSlider"/>
+      <output id="rangevalue">70</output>% 1RM
+        <br>
+      <input type="text" id="oneRepMaxPercentLa"> = %1RM (Landers)
+        <br>
+      <input type="text" id="oneRepMaxPercentOc"> = %1RM (O'Connor)
     </form>
 
     <!-- jquery script -->
   <script>
-    $("button#calculate").on("click", function () {
-	    var reps = $("input#reps").val();
-      var weight = $("input#weight").val();
-      $("input#oneRepMaxLa").val(Math.round(100 * weight / (101.3 - 2.67123 * reps)));
-      $("input#oneRepMaxOc").val(Math.round(weight * (1 + 0.025 * reps)));
-      }
-    );
+  $("button#calculate").on("click", function () {
+  	var reps = $("input#reps").val();
+    var weight = $("input#weight").val();
+    $("input#oneRepMaxLa").val(Math.round(100 * weight / (101.3 - 2.67123 * reps)));
+    $("input#oneRepMaxOc").val(Math.round(weight * (1 + 0.025 * reps)));
+    var lander = $("input#oneRepMaxLa").val();
+    var oconnor = $("input#oneRepMaxOc").val();
+    var rangeVal = $("output#rangevalue").val();
+    $("input#oneRepMaxPercentLa").val(Math.round(lander * rangeVal / 100));
+    $("input#oneRepMaxPercentOc").val(Math.round(oconnor * rangeVal / 100));
+    $("input#percentSlider").on("change", function () {
+    	var rangeVal = $("output#rangevalue").val();
+    	$("input#oneRepMaxPercentLa").val(Math.round(lander * rangeVal / 100));
+      $("input#oneRepMaxPercentOc").val(Math.round(oconnor * rangeVal / 100));
+    });
+  });
   </script>
   </body>
 </html>
