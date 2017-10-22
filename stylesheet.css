@@ -1,8 +1,8 @@
 html {
   padding: 10px;
-  font-size: 2.5em;
+  font-size: 1em;
   font-family: Dyslexie, Menlo, Monaco, "Courier New", mono;
-  line-height: 4em;
+  line-height: 2em;
 }
 
 input[type="text"] {
