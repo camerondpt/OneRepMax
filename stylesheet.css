@@ -97,7 +97,7 @@ button {
   color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
   font-size: 1em;
-  display: inline-block;
+  display: inline;
   margin: auto;
   -webkit-appearance: none;
 }
