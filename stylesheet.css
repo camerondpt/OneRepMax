@@ -90,7 +90,7 @@ button {
   height: 50px;
   width: 50%;
   background: #759afc;
-  text-decoration-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   cursor: pointer;
   font-size: 1em;
   display: block;
