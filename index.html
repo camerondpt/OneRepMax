@@ -9,19 +9,19 @@
   </head>
   <body>
     <form method="post">
-      <input type="number" id="reps"> Repititions<br>
-      <input type="number" id="weight"> Pounds<br>
+      <input type="number" id="reps" type="number" id="reps" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number"> Repititions<br>
+      <input type="number" id="weight" type="number" id="reps" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number"> Pounds<br>
     </form>
     <button id="calculate">Calculate</button>
     <form>
       1RM = <input type="text" id="oneRepMaxLa"> (Landers)<br>
       1RM = <input type="text" id="oneRepMaxOc"> (O'Connor)<br>
-        <br>
+      <br>
       <input type="range" min="0" max="100" value="70" step="5" onchange="rangevalue.value=value" id="percentSlider"/>
       <output id="rangevalue">70</output>% 1RM
-        <br>
+      <br>
       <input type="text" id="oneRepMaxPercentLa"> = %1RM (Landers)
-        <br>
+      <br>
       <input type="text" id="oneRepMaxPercentOc"> = %1RM (O'Connor)
     </form>
 
