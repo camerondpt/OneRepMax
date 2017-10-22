@@ -3,18 +3,22 @@
   <head>
     <meta charset="utf-8" name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <!--Style Sheet for the index.html page -->
     <link href="stylesheet.css" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <title>One Rep Max Calculator</title>
   </head>
   <body>
-    <form method="post">
+    <form method="post" id="Form">
       <input type="number" id="reps" type="number" id="reps" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number"> Repetitions<br>
       <input type="number" id="weight" type="number" id="reps" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number"> Pounds<br>
     </form>
     <br>
-    <button id="calculate">Calculate</button>
+    <div>
+      <button id="calculate">Calculate</button>
+      <button id="Reset"</button>
+    </div>
     <br>
     <form>
       1RM = <input type="text" id="oneRepMaxLa"> (Landers)<br>
@@ -47,6 +51,9 @@
     	$("input#oneRepMaxPercentLa").val(Math.round(lander * rangeVal / 100));
       $("input#oneRepMaxPercentOc").val(Math.round(oconnor * rangeVal / 100));
     });
+  });
+  $("button#Reset").on("click", function () {
+    $('#Form').trigger("reset");
   });
   </script>
   </body>

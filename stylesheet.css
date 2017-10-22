@@ -97,7 +97,14 @@ button {
   color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
   font-size: 1em;
-  display: block;
+  display: inline-block;
   margin: auto;
   -webkit-appearance: none;
+}
+
+.green {
+  display: inline;
+  width: 25%;
+  margin: 10%;
+  background: #7CD05D;
 }
