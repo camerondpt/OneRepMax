@@ -74,7 +74,7 @@ input[type=range]::-webkit-slider-thumb {
   background: #759afc;
   cursor: pointer;
   -webkit-appearance: none;
-  margin-top: -15px;
+  margin-top: -30px;
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
